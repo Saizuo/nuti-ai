@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+<head>
+    <link href="css/output.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Nuti Image Generator</title>
+</head>
+
+<body class="scroll-smooth">   
+    <main class="scroll-smooth">
+        <div class="fixed max-w-[1000px] w-full md:top-12 top-6 right-1/2 translate-x-1/2 p-4 z-20">
+            <nav class="flex justify-between items-center rounded-lg bg-dark shadow-md p-4">
+                <div class="border border-white rounded-lg">
+                    <img src="img/logo.png" class="rounded-lg md:w-[50px] w-[35px] mr-auto" alt="">
+                </div>
+                <div class="mx-auto">
+                    <ul class="flex justify-center md:gap-12 sm:gap-8 gap-2 items-center text-white md:text-3xl text-md">
+                        <li class="duration-100 ease-in-out hover:text-yellow"><a href="index.html">Home</a></li>
+                        <li class="duration-100 ease-in-out hover:text-yellow"><a href="#generator">Generator</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="p-4 py-48 bg-blue min-h-screen" id="generator">
+            <div class="max-w-[800px] mx-auto pt-24">
+                <div class="text-center mb-12">
+                    <h1 class="text-white md:text-8xl sm:text-5xl text-4xl text-shadow-b font-ice uppercase">Image Generator</h1>
+                </div>
+                
+                <div class="bg-dark/90 rounded-xl p-8 shadow-md">
+                    <div class="flex flex-col gap-6">
+                        <textarea 
+                            id="promptInput"
+                            placeholder="Enter your prompt here..." 
+                            class="w-full p-4 rounded-lg bg-white/10 text-black font-ice md:text-xl min-h-[150px]"
+                        ></textarea>
+
+                        <div id="imageResult" class="relative w-full aspect-square bg-white/10 rounded-lg overflow-hidden flex items-center justify-center">
+                            <span class="text-white font-ice">Generated image will appear here</span>
+                        </div>
+                          <button 
+                              id="generateBtn" 
+                              class="bg-blue hover:bg-blue/80 text-yellow font-ice md:text-3xl text-xl py-4 rounded-lg uppercase shadow-lg hover:scale-105 transition-transform"
+                              onclick="console.log('Button clicked')"
+                          >
+                              Generate Image
+                          </button>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const client = {
+            baseURL: "https://api.zukijourney.com/v1",
+            apiKey: 'zu-2009f6811a0335d3b7ef955f4697f8a7'
+        };
+
+        let isGenerating = false;
+        const cooldownTime = 10000;
+        let lastGenerateTime = 0;
+
+        document.getElementById('generateBtn').addEventListener('click', async function() {
+            if (isGenerating) return;
+            
+            const now = Date.now();
+            if (now - lastGenerateTime < cooldownTime) {
+                const remainingTime = (cooldownTime - (now - lastGenerateTime)) / 1000;
+                alert(`Please wait ${remainingTime.toFixed(1)} seconds before generating another image!`);
+                return;
+            }
+
+            const promptInput = document.getElementById('promptInput');
+            const prompt = promptInput.value.trim();
+            if (!prompt) return;
+
+            isGenerating = true;
+            const imageResult = document.getElementById('imageResult');
+
+            const progressMessages = [
+                "🎨 Preparing your masterpiece...",
+                "🖌️ Adding artistic touches...",
+                "✨ Sprinkling some magic...",
+                "🌈 Bringing your vision to life...",
+                "🎭 Almost there..."
+            ];
+
+            let messageIndex = 0;
+            imageResult.innerHTML = `<div class="text-white font-ice text-2xl text-center">${progressMessages[0]}</div>`;
+            
+            const progressInterval = setInterval(() => {
+                messageIndex = (messageIndex + 1) % progressMessages.length;
+                imageResult.innerHTML = `<div class="text-white font-ice text-2xl text-center">${progressMessages[messageIndex]}</div>`;
+            }, 2000);
+
+            try {
+                const response = await fetch(`${client.baseURL}/images/generations`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${client.apiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: "dall-e-3",
+                        prompt: prompt,
+                        n: 1,
+                        size: "1024x1024"
+                    })
+                });
+
+                const data = await response.json();
+                clearInterval(progressInterval);
+
+                if (data.data && data.data[0].url) {
+                    imageResult.innerHTML = `<img src="${data.data[0].url}" alt="Generated Image" class="w-full h-full object-contain rounded-lg">`;
+                    lastGenerateTime = Date.now();
+                } else {
+                    throw new Error('Invalid response data');
+                }
+            } catch (error) {
+                clearInterval(progressInterval);
+                imageResult.innerHTML = `<div class="text-white font-ice text-2xl text-center">Generation failed. Please try again.</div>`;
+                console.error('Error:', error);
+            } finally {
+                isGenerating = false;
+            }
+        });
+
+        const promptInput = document.getElementById('promptInput');
+        promptInput.addEventListener('keyup', function() {
+            console.log('Typing:', this.value);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <link href="css/output.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&amp;display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Nuti</title>
+</head>
+
+<body class="scroll-smooth">   
+
+
+    <main class="scroll-smooth">
+        <div class="fixed max-w-[1000px] w-full md:top-12 top-6 right-1/2 translate-x-1/2 p-4 z-20">
+            <nav class="flex justify-between items-center rounded-lg bg-dark shadow-md p-4">
+                <div class="border border-white rounded-lg">
+                    <img src="img/logo.png" class="rounded-lg md:w-[50px] w-[35px] mr-auto" alt="">
+                </div>
+    
+                <div class="mx-auto">
+                    <ul class="flex justify-center md:gap-12 sm:gap-8 gap-2 items-center text-white md:text-3xl text-md">
+                        <li class="duration-100 ease-in-out hover:text-yellow"><a href="#home">Home</a></li>
+                        <li class="duration-100 ease-in-out hover:text-yellow"><a href="#about">About</a></li>
+                        <li class="duration-100 ease-in-out hover:text-yellow"><a href="#tk">Tokenomics</a></li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <a href="#" target="_blank" class="p-2 md:px-10 px-4 rounded-lg bg-blue text-yellow uppercase md:text-3xl text-lg">Buy</a>
+                </div>
+            </nav>
+        </div>
+        <div class="p-4 py-48 hero pt-24 md:min-h-[120vh] min-h-[60vh] relative" id="home">
+            <div class="text-center absolute md:left-[13vw] left-[10vw] md:bottom-[30vh] bottom-4">
+                <div class="md:max-w-[400px] max-w-[150px] space-4 items-stretch flex gap-4 md:flex-row flex-col">
+                    <div class="flex justify-center gap-4 flex-1 items-stretch mx-auto">
+                        <div class="flex-1">
+                            <a href="https://x.com/nutiai" target="_blank" class="bg-white border-2 border-white/60 md:p-3 p-2 rounded-lg ease-in-out duration-100 hover:bg-brown flex items-center justify-center h-full hover:bg-yellow"><img src="img/tw.png" alt="Twitter"></a>
+                        </div>
+                        <div class="flex-1">
+                            <a href="#" class="bg-white border-2 border-white/60 md:p-3 p-2 rounded-lg ease-in-out duration-100 hover:bg-brown flex items-center justify-center h-full hover:bg-yellow"><img src="img/dex.png" alt="DEX"></a>
+                        </div>
+                        <div class="flex-1">
+                            <a href="https://x.com/nutiai" target="_blank" class="bg-white border-2 border-white/60 md:p-3 p-2 rounded-lg ease-in-out duration-100 hover:bg-brown flex items-center justify-center h-full hover:bg-yellow"><img src="img/tg.png" alt="TG"></a>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <button id="memeGen" class="rounded-md shadow-md p-4 text-center font-ice bg-indigo-600/80 border border-indigo-600/70 text-white 
+                        shadow-[0_0_15px_3px_rgba(167, 112, 81,0.6),_0_0_30px_10px_rgba(167, 112, 81,0.4)] 
+                        hover:scale-110 hover:rotate-6 duration-200 ease-in-out 
+                        focus:outline-none focus:ring-4 focus:ring-indigo-500/50 
+                        transition-all" onclick="window.open('generate-image.html', '_blank')">
+                        MEME GENERATOR
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div
+        x-data="{}"
+        x-init="$nextTick(() => {
+            let ul = $refs.logos;
+            ul.insertAdjacentHTML('afterend', ul.outerHTML);
+            ul.nextSibling.setAttribute('aria-hidden', 'true');
+        })"
+        class="mt-auto w-full inline-flex flex-nowrap overflow-hidden"
+    >
+        <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-2 [&_img]:max-w-none animate-infinite-scroll p-2 shadow-lg bg-dark">
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+  
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+  
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+  
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+  
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+  
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+        </ul>                
+    </div>
+        
+
+        <div class="relative about bg-blue" id="about">
+            <div class="text-center flex-1 pt-24">
+                <h1 class="text-white md:text-8xl sm:text-5xl text-4xl text-shadow-b font-ice uppercase">about</h1>
+            </div>
+            <div class="p-4 max-w-[800px] mx-auto flex justify-between items-center gap-8 md:flex-row flex-col pb-12">
+                <div class="text-center flex-1">
+                    <p class="font-ice text-white md:text-3xl sm:text-xl text-md">Nuti brings imagination to life through<span class="font-black text-yellow text-shadow-bs"> adorable AI-generated masterpieces,</span> inviting creators into a whimsical world where cuteness knows no bounds. With a sprinkle of digital magic, Nuti transforms simple prompts into charming visual delights that warm hearts and spark joy. Each generated image carries its own unique personality, crafted with care to deliver the perfect blend of sweetness and creativity that resonates with art lovers everywhere.                    </p>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="relative tk bg-dark" id="tk">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#8E5630" fill-opacity="1" d="M0,192L30,176C60,160,120,128,180,128C240,128,300,160,360,160C420,160,480,128,540,138.7C600,149,660,203,720,213.3C780,224,840,192,900,170.7C960,149,1020,139,1080,122.7C1140,107,1200,85,1260,85.3C1320,85,1380,107,1410,117.3L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+              </svg>
+            <div class="p-4 max-w-[1500px] mx-auto py-48 pt-0 pb-36">
+                <div class="text-center flex-1">
+                    <h1 class="text-white md:text-8xl sm:text-5xl text-4xl text-shadow-b font-ice uppercase">Tokenomics</h1>
+                </div>
+                <div class="flex justify-between items-center gap-8 md:flex-row flex-col mt-24 md:p-0 p-6">
+                    <div class="flex-1 rounded-xl p-4 text-center bg-dark shadow-md hover:scale-110 duration-200 ease-in-out font-ice">
+                        <span class="text-white md:text-xl text-lg uppercase mb-8">Total Supply</span>
+                        <h2 class="md:text-6xl text-4xl uppercase text-lightBlue text-stroke fix-stroke font-bold font-londrina">1B Supply</h2>
+                    </div>
+                    <div class="flex-1 rounded-xl p-4 text-center bg-dark shadow-md hover:scale-110 duration-200 ease-in-out font-ice">
+                        <span class="text-white md:text-xl text-lg uppercase mb-8">Liquidity</span>
+                        <h2 class="md:text-6xl text-4xl uppercase text-lightBlue text-stroke fix-stroke font-bold font-londrina">100% Locked</h2>
+                    </div>
+                    <div class="flex-1 rounded-xl p-4 text-center bg-dark shadow-md hover:scale-110 duration-200 ease-in-out font-ice">
+                        <span class="text-white md:text-xl text-lg uppercase mb-8">Mint & Freeze</span>
+                        <h2 class="md:text-6xl text-4xl uppercase text-lightBlue text-stroke fix-stroke font-bold font-londrina">100% Revoked</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+        x-data="{}"
+        x-init="$nextTick(() => {
+            let ul = $refs.logos;
+            ul.insertAdjacentHTML('afterend', ul.outerHTML);
+            ul.nextSibling.setAttribute('aria-hidden', 'true');
+        })"
+        class="mt-auto w-full inline-flex flex-nowrap overflow-hidden"
+    >
+        <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-2 [&_img]:max-w-none animate-infinite-scroll p-2 shadow-lg bg-dark">
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+  
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+  
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+  
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+  
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+  
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+        </ul>                
+    </div>
+       
+        <div class="p-4 py-24 buy">
+            <div class="max-w-[1500px] mx-auto py-12 pt-4 text-center">
+                <h1 class="text-white md:text-8xl sm:text-5xl text-4xl text-shadow-b font-ice uppercase">How To Buy</h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 gap-y-12 mt-12">
+                    <div class="hover:scale-110  duration-100 ease-in-out p-4 flex-1 rounded-lg bg-dark/90 border border-dark/80 shadow-md uppercase font-ice">
+                        <div class="flex justify-between gap-4 items-center py-2 border-b border-dark/80 mb-8">
+                            <div class="max-w-[32px]">
+                                <img class="rounded-md" src="img/phantom.svg" alt="Phantom">
+                            </div>
+                            <div>
+                                <h2 class="text-yellow md:text-3xl text-xl font-ice font-bold text-shadow-s">1. Create Wallet</h2>
+                            </div>
+                        </div>
+        
+                        <div class="text-white text-left text-xl font-londrina">
+                            <p>Download Phantom or your wallet of choice from the app store or Google Play for free. Desktop users, download the Google Chrome extension by going to Phantom.</p>
+                        </div>
+                    </div>
+        
+                    <div class="hover:scale-110  duration-100 ease-in-out p-4 flex-1 rounded-lg bg-dark/90 border border-dark/80 shadow-md uppercase">
+                        <div class="flex justify-between gap-4 items-center py-2 border-b border-dark/80 mb-8">
+                            <div class="max-w-[32px]">
+                                <img class="rounded-md" src="img/sol.webp" alt="Solana">
+                            </div>
+                            <div>
+                                <h2 class="text-yellow md:text-3xl text-xl font-ice font-bold text-shadow-s">2. GET SOME SOL</h2>
+                            </div>
+                        </div>
+        
+                        <div class="text-white text-left text-xl font-londrina">
+                            <p>Have SOL in your wallet to switch to $Nuti. If you don’t have any SOL, you can buy directly on Phantom, transfer from another wallet, or buy on another exchange and send it to your wallet.</p>
+                        </div>
+                    </div>
+        
+                    <div class="hover:scale-110 duration-100 ease-in-out p-4 flex-1 rounded-lg bg-dark/90 border border-dark/80 shadow-md uppercase">
+                        <div class="flex justify-between gap-4 items-center py-2 border-b border-dark/80 mb-8">
+                            <div class="max-w-[32px]">
+                                <img class="rounded-md" src="img/jup.webp" alt="Jupiter">
+                            </div>
+                            <div>
+                                <h2 class="text-yellow md:text-3xl text-xl font-ice font-bold text-shadow-s">3. GO TO JUP.AG</h2>
+                            </div>
+                        </div>
+        
+                        <div class="text-white text-left text-xl font-londrina">
+                            <p>Connect to Jupiter. Connect your wallet in chrome. Paste the $Nuti token address and confirm. When Phantom prompts you for a wallet signature, sign.</p>
+                        </div>
+                    </div>
+        
+                    <div class="hover:scale-110  duration-100 ease-in-out p-4 flex-1 rounded-lg bg-dark/90 border border-dark/80 shadow-md uppercase">
+                        <div class="flex justify-between gap-4 items-center py-2 border-b border-dark/80 mb-8">
+                            <div class="max-w-[32px]">
+                                <img class="rounded-md" src="img/logo.png" alt="Logo">
+                            </div>
+                            <div>
+                                <h2 class="text-yellow md:text-3xl text-xl font-ice font-bold text-shadow-s">4. SWAP TO $Nuti</h2>
+                            </div>
+                        </div>
+        
+                        <div class="text-white text-left text-xl font-londrina">
+                            <p>Switch SOL for $Nuti. We have Zero taxes so you don’t need to worry about buying with a specific slippage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+        x-data="{}"
+        x-init="$nextTick(() => {
+            let ul = $refs.logos;
+            ul.insertAdjacentHTML('afterend', ul.outerHTML);
+            ul.nextSibling.setAttribute('aria-hidden', 'true');
+        })"
+        class="mt-auto w-full inline-flex flex-nowrap overflow-hidden"
+    >
+        <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-2 [&_img]:max-w-none animate-infinite-scroll p-2 shadow-lg bg-dark">
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+  
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+  
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+  
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+  
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+  
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-lightBlue md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+            <li>
+                <h3 class="text-white md:text-2xl text-2xl">$Nuti</h3>
+            </li>
+
+        </ul>                
+    </div>
+
+        <div class="bg-dark p-4 py-12">
+            <div class="max-w-[1500px] p-4 mx-auto mb-12">
+                <div class="flex items-center justify-center gap-12 md:flex-row flex-col">
+                    <div class="instax-frame  max-w-[300px]">
+                        <img class="object-cover" src="img/logo.png" alt="Instax image">
+                    </div>
+                    <div class="ml-4">
+                        <h2 class="text-8xl text-dark font-black text-shadow-w backdrop-shadow-lg">NUTI</h2>
+                        <p class="font-bold text-yellow text-shadow-s text-lg mb-4">Join The Community Today!</p>
+                        <div class="flex md:justify-start justify-center gap-4 items-center">
+                            <a href="https://x.com/nutiai" target="_blank" class="bg-dark/70 border-2 border-dark/60 w-[60px] h-[60px] p-4 rounded-full ease-in-out duration-100 hover:bg-dark"><img src="img/tw.png" alt="Twitter"></a>
+                            <a href="#" class="bg-dark/70 border-2 border-dark/60 w-[60px] h-[60px] p-4 rounded-full ease-in-out duration-100 hover:bg-dark"><img src="img/dex.png" alt="DEX"></a>
+                            <a href="https://t.me/nutiai" target="_blank" class="bg-dark/70 border-2 border-dark/60 w-[60px] h-[60px] p-4 rounded-full ease-in-out duration-100 hover:bg-dark"><img src="img/tg.png" alt="TG"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+
+</html>
